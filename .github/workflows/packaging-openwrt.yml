@@ -197,7 +197,8 @@ jobs:
         uses: ophub/flippy-openwrt-actions@main
         if: ${{ steps.download.outputs.status }} == 'success' && !cancelled()
         env:
-          OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*rootfs.tar.gz
+          # OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*rootfs.tar.gz
+          OPENWRT_ARMVIRT: https://github.com/MrJref/OpenWrt/releases/download/ROOTFS_PLUS/openwrt-armvirt-64-generic-rootfs.tar.gz
           SELECT_PACKITPATH: openwrt_packit
           PACKAGE_SOC: ${{ inputs.openwrt_soc }}
           KERNEL_REPO_URL: ${{ inputs.kernel_repo }}
